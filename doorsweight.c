@@ -3,62 +3,77 @@
 
 typedef struct person{
   
-  int *a;
-  int *b;
+  int a;
+  int b;
   
 }pessoas;
 
-void mudaEstado(struct person *x, int *arr, int limite, int portas) {
+void mostraAbertas (int *portas, int porta) {
 
-for(int i=1;i<=limite;i++){
-for(int j=1;j<=portas;j++) {
+  for(int i=1;i<=porta;i++) {
 
-if(j>=x[i].a[i] || j<=x[i].b[i]) {
+    if(portas[i]==1) {
 
-if(arr[j]==0) {
+      printf("%i\n",i);
 
-  arr[j]=1;
-
-}
-
-else {
-
-  arr[j]=0;
-
+  }
 }
 }
 
+void mudaEstado(pessoas *x, int porta[], int limite, int portas) {
+
+int n=1;
+
+do{
+
+for(int i=1;i<=portas;i++) {
+
+  if(i>=x[n].a && i<=x[n].b) {
+
+    if(porta[i]==1) {
+
+      porta[i]=0;
+
+    }
+
+    else {
+
+      porta[i]=1;
+
+    }
+  }
 }
-}
+
+n++;
+
+}while(n<=limite);
 }
 
 int main(void) {
   
-  int n, k;
+  int n, k; // numero de portas e numero de pessoas
   
-  scanf("%i %i",&n,&k);
+  scanf("%i %i",&n,&k); // input
+
+  pessoas *pessoa = malloc(sizeof(pessoas)*k); // criei um vetor de estruturas (pessoas)
   
-  pessoas *pessoa = malloc(sizeof(pessoas)*k);
-  
-  int * portas = malloc(sizeof(int)*n);
+  int *portas = malloc(sizeof(int)*n); // criei um vetor de portas
 
   for(int i=1;i<=n;i++) {
     
-    portas[i] = 0;
+    portas[i] = 0; // setei as portas como fechadas
     
   }
   
-  for(int j=1;j<=k;j++) {
-    
-  pessoa[j].a[j] = malloc(sizeof(int)*k);
-  pessoa[j].b[j] = malloc(sizeof(int)*k); // não estou alocando memória corretamente, por algum motivo (ver depois)
+  for(int j=1;j<=k;j++) { 
 
-  scanf("%i %i",&pessoa[j].a[j],&pessoa[j].b[j]);
+  scanf("%i %i",&pessoa[j].a,&pessoa[j].b); // atribuí os valore de a e b para cada pessoa i
 
   }
 
   mudaEstado(pessoa,portas,k,n);
-  
+  mostraAbertas(portas,n);
+
   return 0;
   
 }
