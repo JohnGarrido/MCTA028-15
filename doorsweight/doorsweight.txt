@@ -1,0 +1,40 @@
+[a_i, a_i + 1.., b_i]. Mudar o estado significa abrir a porta se ela estava fechada e fechar a porta se estava aberta. Por exemplo, 
+para n=5 e k=3. Inicialmente,
+Porta 1 - Fechada
+Porta 2 - Fechada
+Porta 3 - Fechada
+Porta 4 - Fechada
+Porta 5 - Fechada
+
+Para a_1 = 1 e b_1 = 3:
+Porta 1 - Aberta
+Porta 2 - Aberta
+Porta 3 - Aberta
+Porta 4 - Fechada
+Porta 5 - Fechada
+
+Para a_2 = 2 e b_2 = 4:
+Porta 1 - Aberta
+Porta 2 - Fechada
+Porta 3 - Fechada
+Porta 4 - Aberta
+Porta 5 - Fechada
+
+Para a_3 = 3 e b_3 = 5:
+Porta 1 - Aberta
+Porta 2 - Fechada
+Porta 3 - Aberta
+Porta 4 - Fechada
+Porta 5 - Aberta
+Imprima as portas abertas no final em ordem crescente.
+
+A primeira linha contém n e k. As linhas seguintes os valores de a_i e b_i.
+Exemplo de entrada
+5 3
+1 3
+2 4
+3 5
+Exemplo de saída
+1
+3
+5
