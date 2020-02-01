@@ -55,19 +55,19 @@ int main(void) {
   
   scanf("%i %i",&n,&k); // input
 
-  pessoas *pessoa = malloc(sizeof(pessoas)*k); // criei um vetor de estruturas (pessoas)
+  pessoas *pessoa = malloc(sizeof(pessoas)*k); // cria um vetor de estruturas (pessoas)
   
-  int *portas = malloc(sizeof(int)*n); // criei um vetor de portas
+  int *portas = malloc(sizeof(int)*n); // cria um vetor de portas (para armazenar seus estados)
 
   for(int i=1;i<=n;i++) {
     
-    portas[i] = 0; // setei as portas como fechadas
+    portas[i] = 0; // seta as portas como fechadas
     
   }
   
   for(int j=1;j<=k;j++) { 
 
-  scanf("%i %i",&pessoa[j].a,&pessoa[j].b); // atribuí os valore de a e b para cada pessoa i
+  scanf("%i %i",&pessoa[j].a,&pessoa[j].b); // atribui os valore de a e b para cada pessoa j
 
   }
 
