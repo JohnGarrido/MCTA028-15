@@ -1,4 +1,5 @@
-[a_i, a_i + 1.., b_i]. Mudar o estado significa abrir a porta se ela estava fechada e fechar a porta se estava aberta. Por exemplo, 
+Temos n portas numeradas de 1 a n. Todas estão inicialmente fechadas.
+Temos k pessoas. Cada pessoa i tem dois valores a_i e b_i representando portas (a_i < b_i). A pessoa i irá mudar o estados das portas [a_i, a_i + 1.., b_i]. Mudar o estado significa abrir a porta se ela estava fechada e fechar a porta se estava aberta. Por exemplo, 
 para n=5 e k=3. Inicialmente,
 Porta 1 - Fechada
 Porta 2 - Fechada
@@ -38,3 +39,4 @@ Exemplo de saída
 1
 3
 5
+
