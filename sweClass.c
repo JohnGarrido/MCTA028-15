@@ -13,15 +13,13 @@ double CR;
 }alunos;
 
 void classSchedule(alunos *materia, int classSize) {
-
+  
 // funcao mostra a classe setada na tela
 
   while(classSize) {
     classSize--;
     printf("%s %li %lf\n",materia[classSize].name,materia[classSize].RA,materia[classSize].CR);
-
   }
-
 }
 
 int order(const void*a,const void*b) {
@@ -31,11 +29,9 @@ int order(const void*a,const void*b) {
   if((*(alunos*)a).CR == (*(alunos*)b).CR) {
     return 0;
   }
-
   else if((*(alunos*)a).CR < (*(alunos*)b).CR) {
     return -1;
   }
-
   else {
     return 1;
   }
@@ -50,7 +46,6 @@ while(classSize) {
   materia[classSize].name = malloc(sizeof(char)*100);
   scanf("%s %li %lf",materia[classSize].name,&materia[classSize].RA,&materia[classSize].CR);
 }
-
 }
 
 int main(void) {
