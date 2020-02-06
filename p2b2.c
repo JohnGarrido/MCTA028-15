@@ -26,58 +26,49 @@ typedef struct ponto_s{
 int x;
 int y;
 
-}ponto[3];
+}ponto[3]; // estrutura de um ponto (nesse caso, possui 2 coordenadas x,y no plano)
 
 struct triangulo_s {
 
 ponto pontos[3];
 
-};
+}; // estrutura de um triangulo (comporta 3 pontos no plano)
 
 struct triangulo_s constroi(struct triangulo_s x) {
 
 for(int i=0;i<3;i++) {
-
 x.pontos[i]->x *= 2;
 x.pontos[i]->y *= 2;
-
-}
+} // para cada ponto nao-colinear, duplica o ponto
 
 for(int i=0;i<3;i++) {
-
 printf("%i %i\n",x.pontos[i]->x,x.pontos[i]->y);
-
-}
+} // mostra os pontos na tela
 
 return x;
-
 }
 
 int valida(struct triangulo_s x) {
 
 int a = ((x.pontos[0]->x - x.pontos[1]->x) * (x.pontos[1]->y - x.pontos[2]->y)) - ((x.pontos[1]->x - x.pontos[2]->x) * (x.pontos[0]->y - x.pontos[1]->y)); 
-
+// definição de colinearidade, para todo a == 0 os pontos são colineares, no caso, tratamos sempre de 3 pontos
+  
 return a;
-
 }
 
 int main(void) {
 
 struct triangulo_s triangulo; 
-
 for(int i=0;i<3;i++) {
-
-scanf("%i %i",&triangulo.pontos[i]->x,&triangulo.pontos[i]->y);
-
+scanf("%i %i",&triangulo.pontos[i]->x,&triangulo.pontos[i]->y); // input de pontos
 }
 
-
-if(valida(triangulo)==0) {
+if(valida(triangulo)==0) { //valia se os pontos são colineares, caso forem, mostra inválido
   printf("INVÁLIDO");
 }
 
 else {
-  constroi(triangulo);
+  constroi(triangulo); // se os pontos não forem invalidos, retorna o triangulo formado por pontos*2
 }
 
 return 0;
