@@ -15,9 +15,7 @@ typedef struct pessoa_s{
 void mostraVetor(p *x,int num) {
   
   for(int i=0;i<num;i++) {
-    
     printf("%lf %i\n",x[i].salario,x[i].idade);
-    
   }
 } 
 
