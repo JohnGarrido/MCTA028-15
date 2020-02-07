@@ -1,6 +1,6 @@
 /*
 Ordena as pessoas por prioridade de salário utilizando a idade como critério de desempate
-*\
+*/
 
 #include <stdio.h>
 #include <stdlib.h>
